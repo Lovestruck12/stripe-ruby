@@ -1,0 +1,11 @@
+require 'stripe'
+Stripe.api_key = 'sk_test_51Kl8HIGSHvi5JOIbXbs1kYhCJ4O4sXNMVNbwd34oxiiEojRI37zo7JqbT0OuxS8ffiMwhpTWuuOxHBLgtxAqZuoS005rnzSEdp'
+Stripe.api_version = '2020-08-27'
+require 'stripe'
+intent = Stripe::PaymentIntent.retrieve(
+  'pi_1DrN4f2eZvKYlo2CYb4EXe4e',
+  {
+    stripe_version: '2020-08-27',
+  }
+)
+intent.capture
