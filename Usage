@@ -1,0 +1,33 @@
+require 'stripe'
+Stripe.api_key = 'sk_test_sk_live_51Kl8HIGSHvi5JOIbZlN7ZkVo0SDP1hrQKCaIhLelUZU662HqNyOAE8pdMmJEXMkOKLC2WhEEw6WjxPqSawFTEoqe0097jWrHZP'
+# list customers
+Stripe::Customer.list()
+# retrieve single customer
+Stripe::Customer.retrieve('cus_123456789')
+require "stripe"
+Stripe::Customer.list(
+{},
+{
+api_key: 'sk_test_sk_live_51Kl8HIGSHvi5JOIbZlN7ZkVo0SDP1hrQKCaIhLelUZU662HqNyOAE8pdMmJEXMkOKLC2WhEEw6WjxPqSawFTEoqe0097jWrHZP'
+stripe_account: 'acct_1Kl8HIGSHvi5JOIb'
+stripe_verison: '2020-08-27'
+}
+)
+Stripe::Customer.retrieve(
+{
+id:'cust_123456789
+expand: %w(balance_transaction)
+},
+{
+stripe_version: '2020-08-27',
+api_key: 'sk_test_sk_live_51Kl8HIGSHvi5JOIbZlN7ZkVo0SDP1hrQKCaIhLelUZU662HqNyOAE8pdMmJEXMkOKLC2WhEEw6WjxPqSawFTEoqe0097jWrHZP'
+}
+)
+Stripe::Customer.capture(
+'cus_123456788',
+{},
+{
+stripe_verison: '2020-08-27',
+api_key: 'sk_test_sk_live_51Kl8HIGSHvi5JOIbZlN7ZkVo0SDP1hrQKCaIhLelUZU662HqNyOAE8pdMmJEXMkOKLC2WhEEw6WjxPqSawFTEoqe0097jWrHZP'
+}
+)
