@@ -1,0 +1,8 @@
+require 'stripe'
+Stripe.api_key = 'sk_test_51Kl8HIGSHvi5JOIbXbs1kYhCJ4O4sXNMVNbwd34oxiiEojRI37zo7JqbT0OuxS8ffiMwhpTWuuOxHBLgtxAqZuoS005rnzSEdp'
+
+client = Stripe::StripeClient.new()
+customer, response = client.request do
+  Stripe::Customer.create()
+end
+puts response.request_id
