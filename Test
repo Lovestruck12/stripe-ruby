@@ -1,0 +1,11 @@
+require 'stripe'
+Stripe.api_key = 'sk_test_51Kl8HIGSHvi5JOIbXbs1kYhCJ4O4sXNMVNbwd34oxiiEojRI37zo7JqbT0OuxS8ffiMwhpTWuuOxHBLgtxAqZuoS005rnzSEdp'
+
+charge = Stripe::Charge.create({
+  amount: 2000,
+  currency: "usd",
+  source: "tok_mastercard", # obtained with Stripe.js
+  description: "My First Test Charge (created for API docs at https://www.stripe.com/docs/api)"
+}, {
+  idempotency_key: "7et47WuybWijBa2w"
+})
