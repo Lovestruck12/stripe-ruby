@@ -1,0 +1,8 @@
+require 'stripe'
+charge = Stripe::Charge.retrieve(
+  'ch_3KoFqGGSHvi5JOIb2D47Z6Pw',
+  {
+    stripe_account: 'acct_1Kl8HIGSHvi5JOIb',
+  }
+)
+charge.capture # Uses the same account.
